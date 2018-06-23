@@ -43,6 +43,18 @@ def valid_move?(board, index)
   end
 end
 
+def position_taken?(board, index)
+  if board[index] == " "
+    return false
+  elsif board[index] == ""
+    return false
+  elsif board[index] == nil
+    return false
+  elsif board[index] == "X" || board[index] == "O"
+    return true
+  end
+end
+
 def turn(board)
   puts "Please enter 1-9:"
   user_input = gets
