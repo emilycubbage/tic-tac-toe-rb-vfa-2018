@@ -29,7 +29,7 @@ def input_to_index(user_input)
   return index
 end
 
-def move(board,index,token = "X")
+def move(board,index)
   board[index] = token
 end
 
@@ -160,7 +160,7 @@ def winner(board)
 end
 
 def play(board)
-  until over?(board)
+  until over?(board) == true
     turn(board)
   end
   if won?(board)
