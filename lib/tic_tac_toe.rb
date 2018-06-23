@@ -165,3 +165,8 @@ def play(board)
     turn(board)
   end
   if won?(board)
+    puts "Congratulations" + winner
+  elsif draw?(board)
+    puts "The game has ended in a draw"
+  end
+end
