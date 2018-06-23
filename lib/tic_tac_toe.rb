@@ -163,13 +163,11 @@ def play(board)
   until over?(board) == true
     turn(board)
     if won?(board)
-      puts "Congratulations" + winner
+      puts "Congratulations" + winner(board)
       break
     elsif draw?(board)
       puts "The game has ended in a draw"
       break
     end
   end
-  end
-  
 end
