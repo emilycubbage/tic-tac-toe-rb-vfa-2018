@@ -29,7 +29,26 @@ def input_to_index(user_input)
   return index
 end
 
+def move(board,index,token = "X")
+  board[index] = token
+end
 
+def turn(board)
+  puts "Please enter 1-9:"
+  user_input = gets
+  index = input_to_index(user_input)
+  if valid_move?(board,index)
+    move(board,index)
+    display_board(board)
+  elsif !(valid_move?(board,index))
+    while !(valid_move?(board,index))
+      print "Please enter a valid move 1-9:"
+      user_input = gets
+      index = input_to_index(user_input)
+    end
+  end
+  
+end
 
 def won?(board)
   
