@@ -29,7 +29,7 @@ def input_to_index(user_input)
   return index
 end
 
-def move(board,index)
+def move(board,index, token)
   board[index] = token
 end
 
@@ -60,7 +60,7 @@ def turn(board)
   user_input = gets
   index = input_to_index(user_input)
   if valid_move?(board,index)
-    move(board,index)
+    move(board,index, current_player(board))
     display_board(board)
   elsif !(valid_move?(board,index))
     while !(valid_move?(board,index))
