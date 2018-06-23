@@ -90,7 +90,6 @@ def current_player(board)
 end
 
 def won?(board)
-  
   won_check = 0
   WIN_COMBINATIONS.each do |win_combination|
     win_index_1 = win_combination[0]
@@ -132,7 +131,7 @@ def full?(board)
 end
 
 def draw?(board)
-  if won?(board)
+  if won?(board) != false
     return false
   elsif !(full?(board))
     return false
