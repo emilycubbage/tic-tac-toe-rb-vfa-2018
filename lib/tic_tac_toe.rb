@@ -163,10 +163,14 @@ def play(board)
   until over?(board) == true
     turn(board)
     if won?(board)
-      puts "Congratulations" + winner(board)
+      if winner(board) == "X"
+        puts "Congratulations X"
+      elsif winner(board) == "O"
+        puts "Congratulations O"
+      end
       break
     elsif draw?(board)
-      puts "The game has ended in a draw"
+      puts "Cat's Game!"
       break
     end
   end
