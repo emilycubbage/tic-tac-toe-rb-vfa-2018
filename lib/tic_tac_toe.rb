@@ -33,6 +33,16 @@ def move(board,index,token = "X")
   board[index] = token
 end
 
+def valid_move?(board, index)
+  if !(index.between?(0,8))
+    return false
+  elsif position_taken?(board,index) == true
+    return false
+  elsif position_taken?(board,index) == false && index.between?(0,8)
+    return true
+  end
+end
+
 def turn(board)
   puts "Please enter 1-9:"
   user_input = gets
