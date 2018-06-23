@@ -155,8 +155,8 @@ end
 
 def winner(board)
   if won?(board)
-    index = won?(board)[0]
-    return board[index]
+    winning_board = won?(board)
+    return board[winning_board[1]]
   end
 end
 
